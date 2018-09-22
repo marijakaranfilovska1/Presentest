@@ -21,6 +21,7 @@ using Swashbuckle.AspNetCore.Swagger;
 
 using CustomerEquipmentApi.Modules;
 using Microsoft.Extensions.PlatformAbstractions;
+using System.Diagnostics;
 
 namespace CustomerEquipmentApi
 {
@@ -32,7 +33,25 @@ namespace CustomerEquipmentApi
 
         public Startup(IConfiguration configuration)
         {
-            var environment = "dev";
+            /*ProcessStartInfo startInfo = new ProcessStartInfo("git.exe");
+
+            startInfo.UseShellExecute = false;
+            startInfo.WorkingDirectory = "dir Here";
+            startInfo.RedirectStandardInput = true;
+            startInfo.RedirectStandardOutput = true;
+            //startInfo.Arguments = "rev-parse --abbrev-ref HEAD";
+
+            Process process = new Process();
+            process.StartInfo = startInfo;
+            process.Start();
+
+            string branchname = process.StandardOutput.ReadLine();*/
+
+            var bb = Process.Start("git", "branch");
+            string branchname = bb.StandardOutput.ReadLine();
+
+
+            var environment = branchname; 
             var builder = new Microsoft.Extensions.Configuration.ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile($"appsettings.{environment}.json", false, true);
