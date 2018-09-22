@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CustomerEquipmentApi</name>
+    </assembly>
+    <members>
+        <member name="M:CustomerEquipmentApi.Modules.HandlerModule.Load(Autofac.ContainerBuilder)">
+            <inheritdoc />
+            <summary>
+                Load dependencies
+            </summary>
+            <param name="builder">Container</param>
+        </member>
+        <member name="M:CustomerEquipmentApi.Startup.Configure2(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            This method gets called by the runtime. This method will configure the HTTP request pipeline
+            </summary>
+            <param name="app">Application</param>
+            <param name="env">Enviroment</param>
+            <param name="loggerFactory">Logger</param>
+        </member>
+    </members>
+</doc>
