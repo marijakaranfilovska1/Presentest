@@ -46,12 +46,12 @@ namespace CustomerEquipmentApi
             process.Start();
 
             string branchname = process.StandardOutput.ReadLine();*/
-
+            /*
             var bb = Process.Start("git", "branch");
-            string branchname = bb.StandardOutput.ReadLine();
+            string branchname = bb.StandardOutput.ReadLine();*/
 
 
-            var environment = branchname; 
+            var environment = "dev"; 
             var builder = new Microsoft.Extensions.Configuration.ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile($"appsettings.{environment}.json", false, true);
