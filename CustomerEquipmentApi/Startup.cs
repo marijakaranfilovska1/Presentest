@@ -32,6 +32,7 @@ namespace CustomerEquipmentApi
 
         public Startup(IConfiguration configuration)
         {
+
             var environment = "prod";
             var builder = new Microsoft.Extensions.Configuration.ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
